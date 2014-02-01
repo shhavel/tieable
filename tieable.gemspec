@@ -10,7 +10,9 @@ Gem::Specification.new do |spec|
   spec.email         = ["shhavel@gmail.com"]
   spec.summary       = %q{Provides Object#tie method which acts as public_send if receives some arguments,
 except if first argument is nil it returns object itself.}
-  spec.description   = %q{Method created for creating conditional method chains.
+  spec.description   = %q{Provides Object#tie method which acts as public_send if receives some arguments,
+except if first argument is nil it returns object itself.
+Method is intended for creating conditional method chains.
 Also can be used with block only (no arguments).
 In this case method returns result of calling block on self or itself (if block returns nil or false).}
   spec.homepage      = ""

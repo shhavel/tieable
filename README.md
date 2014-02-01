@@ -3,7 +3,7 @@
 Provides Object#tie method which acts as public_send if receives some arguments,
 except if first argument is nil it returns object itself.
 
-Method created for creating conditional method chains.
+Method is intended for creating conditional method chains.
 
 Also can be used with block only (and no arguments).
 In this case method returns result of block call (whith self as block argument) or self (if block returns nil or false).
@@ -24,7 +24,39 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Can be used as public_send, but if receives nil returns self object.
+This provides the  ability to create optional method chain links.
+
+```rb
+# Optional method call
+do_upcase? ? "hello world!" : "hello world!".upcase
+
+# Optional method call with tie (note two pairs of parentheses)
+"hello world!".tie((:upcase if do_upcase?))
+
+```
+
+This is more usefull if needed one optional method in chain
+
+```rb
+# Normally you would do
+def my_method(do_upcase)
+  s = "test".reverse.next.concat("45")
+  s = s.upcase if do_upcase
+  s
+end
+
+# Whit tie it is simpler
+def my_method(do_upcase)
+  "test".reverse.next.concat("45").tie((:upcase if do_upcase))
+end
+
+# Or same with block
+def my_method(do_upcase)
+  "test".reverse.next.concat("45").tie {|s| s.upcase if do_upcase }
+end
+
+```
 
 ## Contributing
 
