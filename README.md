@@ -46,7 +46,7 @@ def my_method(do_upcase)
   s
 end
 
-# Whit tie it is simpler
+# With tie it is simpler
 def my_method(do_upcase)
   "test".reverse.next.concat("45").tie((:upcase if do_upcase))
 end
