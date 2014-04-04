@@ -15,11 +15,11 @@ class TestTie < Test::Unit::TestCase
   end
 
   def test_nil_argument_with_block
-    assert_equal subject.tie(nil) {|o| o.do_something }, subject
+    assert_equal subject.tie(nil, &:do_something), subject
   end
 
   def test_nil_and_two_arguments_with_block
-    assert_equal subject.tie(nil, 'arg1', 'arg2') {|o| o.do_something }, subject
+    assert_equal subject.tie(nil, 'arg1', 'arg2', &:do_something), subject
   end
 
   def test_method_name_argument
