@@ -32,6 +32,7 @@ module Tieable
   #   s = s.upcase if do_upcase?
   #   s
   #
+  # Raises ArgumentError if called without any arguments and without block.
   def tie(*args, &block)
     if args.size > 0
       if args.first.nil?

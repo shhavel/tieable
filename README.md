@@ -6,7 +6,7 @@ except if first argument is nil it returns object itself.
 Method is intended for creating conditional method chains.
 
 Also can be used with block only (and no arguments).
-In this case method returns result of block call (whith self as block argument) or self (if block returns nil or false).
+In this case method returns result of block call (whith receiver as block argument) or receiver itself (if block returns nil or false).
 
 ## Installation
 

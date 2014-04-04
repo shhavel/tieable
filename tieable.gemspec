@@ -25,5 +25,4 @@ In this case method returns result of calling block on self or itself (if block 
 
   spec.add_development_dependency "bundler", "~> 1.5"
   spec.add_development_dependency "rake"
-  spec.add_development_dependency "rspec"
 end

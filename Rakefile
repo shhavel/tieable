@@ -1,8 +1,8 @@
 require "bundler/gem_tasks"
 
-require "rspec/core/rake_task"
-RSpec::Core::RakeTask.new do |t|
-  t.rspec_opts = ["-c", "-f documentation", "-r ./spec/spec_helper.rb"]
-  t.pattern = 'spec/**/*_spec.rb'
+require "rake/testtask"
+Rake::TestTask.new do |t|
+  t.libs << "test"
+  t.test_files = FileList['test/test_*.rb']
 end
-task default: :spec
+task :default => :test
